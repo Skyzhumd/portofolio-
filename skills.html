@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+<title>Programming Language Skills Explained</title>
+<link rel="stylesheet" href="tamp.css" />
+<style>
+  /* Cursor blinking for typing */
+  .typing-cursor {
+    border-right: 3px solid #4fc3f7;
+    animation: blinkCaret 0.8s step-end infinite;
+  }
+  @keyframes blinkCaret {
+    0%, 100% { border-color: transparent }
+    50% { border-color: #4fc3f7 }
+  }
+</style>
+</head>
+<body>
+  <div class="container" role="main" aria-label="Programming language skills explanations"></div>
+
+<script>
+  // The full HTML content string with markup (same as previously)
+  const contentHTML = `
+    <h1>Programming Language Skills</h1>
+
+    <div class="skill" tabindex="0">
+      <h2>Python</h2>
+      <p>Python is a versatile, high-level language known for its clear syntax and readability. It excels in web development, data analysis, artificial intelligence, and automation. Python's extensive libraries make it a favorite for beginners and professionals.</p>
+    </div>
+
+    <div class="skill" tabindex="0">
+      <h2>JavaScript</h2>
+      <p>JavaScript is the core language for interactive web pages. It enables dynamic content, event handling, and API integration. With modern frameworks, it powers front-end and back-end development for rich applications.</p>
+    </div>
+
+    <div class="skill" tabindex="0">
+      <h2>Java</h2>
+      <p>Java is a robust, object-oriented programming language widely used in enterprise applications, Android development, and large systems. It features portability through the JVM, strong typing, and a rich ecosystem.</p>
+    </div>
+
+    <div class="skill" tabindex="0">
+      <h2>C++</h2>
+      <p>C++ delivers high performance and fine-grained control over system resources. It's commonly used for game development, system/software programming, and performance-critical apps. It combines object-oriented and low-level programming.</p>
+    </div>
+
+    <div class="skill" tabindex="0">
+      <h2>Ruby</h2>
+      <p>Ruby is known for its elegant and expressive syntax. It emphasizes developer happiness and productivity. Mostly used for web development powered by Ruby on Rails, Ruby supports flexible and concise code writing.</p>
+    </div>
+
+    <div class="skill" tabindex="0">
+      <h2>Go (Golang)</h2>
+      <p>Go is a statically typed compiled language designed by Google for speed and simplicity. It suits scalable server applications, concurrent programming, and cloud-native development, providing easy syntax with strong performance.</p>
+    </div>
+
+    <div class="skill" tabindex="0">
+      <h2>Swift</h2>
+      <p>Swift is Apple's language for iOS, macOS, and watchOS development. It is fast, safe, and modern, blending performance with ease of use. Swift supports powerful features like optionals and protocol-oriented programming.</p>
+    </div>
+
+    <div class="skill" tabindex="0">
+      <h2>TypeScript</h2>
+      <p>TypeScript is a superset of JavaScript adding static typing and tooling improvements. It helps catch errors early, supports modern JavaScript features, and is widely adopted for large-scale web applications.</p>
+    </div>
+  `;
+
+  const container = document.querySelector('.container');
+  let index = 0;
+  const typingSpeed = 20; // milliseconds per character
+
+  function type() {
+    if (index < contentHTML.length) {
+      container.innerHTML = contentHTML.substring(0, index + 1) + '<span class="typing-cursor"></span>';
+      index++;
+      setTimeout(type, typingSpeed);
+    } else {
+      // Remove cursor at the end
+      container.innerHTML = contentHTML;
+    }
+  }
+
+  // Start typing on page load
+  window.onload = type;
+</script>
+</body>
+</html>
