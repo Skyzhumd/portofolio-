@@ -1,4 +1,54 @@
 /* Existing styles ... */
+/* Reset some default styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+html, body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000000; /* Black background */
+  color: #00b050; /* Bright green text */
+  scroll-behavior: smooth;
+  min-height: 100vh;
+}
+body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1rem 10px 2rem;
+  max-width: 350px;
+  margin: 0 auto;
+}
+
+/* Header style */
+header {
+  width: 100%;
+  margin-bottom: 1.2rem;
+  text-align: center;
+}
+header h1 {
+  font-size: 2rem;
+  color: #00b050;
+  letter-spacing: 1.5px;
+  margin-bottom: 0.2rem;
+}
+nav {
+  margin-top: 0.5rem;
+}
+nav a {
+  color: #00b050;
+  font-weight: 600;
+  text-decoration: none;
+  margin: 0 8px;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+nav a:hover,
+nav a:focus {
+  color: #008000; /* Darker green */
+  outline: none;
+}
 
 /* Profile image container */
 /* Set profile image via background URL here */
@@ -15,6 +65,135 @@
   background-repeat: no-repeat;
 }
 
-/* Maintain existing styles below... */
+/* Section general */
+section {
+  width: 100%;
+  background: #121212; /* Very dark gray for contrast */
+  border-radius: 12px;
+  padding: 18px 16px;
+  margin-bottom: 1.5rem;
+  box-shadow: 0 4px 10px rgba(0, 176, 80, 0.4);
+}
+
+/* About Me */
+#about p {
+  font-size: 1rem;
+  line-height: 1.4;
+  color: #a0d8a0; /* Light green */
+}
+
+/* Projects */
+#projects .project-card {
+  border: 1px solid #004d00; /* Dark green border */
+  border-radius: 10px;
+  padding: 12px;
+  margin-bottom: 12px;
+  transition: box-shadow 0.3s ease;
+  background: #0a200a; /* Dark green background */
+}
+#projects .project-card:hover {
+  box-shadow: 0 4px 15px rgba(0, 176, 80, 0.7);
+}
+#projects .project-title {
+  font-weight: 700;
+  color: #00b050;
+  font-size: 1.1rem;
+  margin-bottom: 6px;
+}
+#projects .project-desc {
+  font-size: 0.9rem;
+  color: #7edc7e;
+  margin-bottom: 8px;
+}
+#projects .project-link {
+  font-weight: 600;
+  color: #00a030;
+  text-decoration: none;
+  font-size: 0.9rem;
+}
+#projects .project-link:hover {
+  text-decoration: underline;
+}
+
+/* Skills with progress bars */
+#skills .skill {
+  margin-bottom: 14px;
+}
+#skills .skill-label {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: #00b050;
+  margin-bottom: 4px;
+  display: flex;
+  justify-content: space-between;
+}
+#skills .skill-bar-bg {
+  background: #004d00; /* Dark green background */
+  height: 14px;
+  border-radius: 10px;
+  overflow: hidden;
+}
+#skills .skill-bar-fill {
+  height: 100%;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #005500, #00b050);
+  width: 0%; /* Initial width 0 for animation */
+  transition: width 1s ease-in-out;
+}
+
+/* Contact */
+#contact p {
+  font-size: 1rem;
+  color: #a0d8a0; /* Light green */
+  margin-bottom: 12px;
+}
+#contact a {
+  font-weight: 600;
+  color: #00b050;
+  text-decoration: none;
+  font-size: 1rem;
+}
+#contact a:hover,
+#contact a:focus {
+  text-decoration: underline;
+  outline: none;
+}
+
+/* Footer */
+footer {
+  font-size: 0.75rem;
+  color: #555;
+  text-align: center;
+  margin-top: auto;
+  padding-top: 1rem;
+}
+
+/* Responsive adjustments: fit inside 600px height, 350px width with no scroll */
+@media (max-width: 350px) {
+  body {
+    padding: 1rem 10px 1.5rem;
+  }
+  header h1 {
+    font-size: 1.7rem;
+  }
+  nav a {
+    font-size: 0.85rem;
+    margin: 0 6px;
+  }
+  section {
+    padding: 14px 12px;
+    margin-bottom: 1rem;
+  }
+  #projects .project-title {
+    font-size: 1rem;
+  }
+  #projects .project-desc {
+    font-size: 0.85rem;
+  }
+  #skills .skill-label {
+    font-size: 0.9rem;
+  }
+}
 </content>
 </create_file>
+
