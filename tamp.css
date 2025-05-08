@@ -1,0 +1,80 @@
+/* Reset & basics */
+* {
+  box-sizing: border-box;
+}
+body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: #000000; /* black background */
+  color: #ffeb3b; /* bright yellow text */
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 20px;
+  min-height: 100vh;
+}
+.container {
+  max-width: 350px;
+  width: 100%;
+  max-height: 600px;
+  background: #000000; /* black container background */
+  border-radius: 12px;
+  padding: 20px;
+  overflow-y: auto;
+  box-shadow: 0 0 15px rgba(255, 235, 59, 0.7);
+  border: 1px solid #ffeb3b;
+}
+h1 {
+  text-align: center;
+  margin-bottom: 15px;
+  font-weight: 700;
+  color: #fff176; /* lighter yellow for heading */
+}
+.skill {
+  background: #111111; /* very dark gray for skill blocks */
+  margin-bottom: 12px;
+  border-radius: 8px;
+  padding: 15px 20px;
+  transition: background 0.3s ease;
+  cursor: pointer;
+  border: 1px solid #ffee58; /* subtle yellow border */
+}
+.skill:hover {
+  background: #222222; /* lighter dark gray on hover */
+}
+.skill h2 {
+  margin: 0 0 6px 0;
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #fffde7; /* pale yellow-white */
+}
+.skill p {
+  margin: 0;
+  font-size: 0.9rem;
+  line-height: 1.4;
+  color: #fff9c4; /* soft pale yellow */
+}
+/* Scrollbar styling */
+.container::-webkit-scrollbar {
+  width: 6px;
+}
+.container::-webkit-scrollbar-thumb {
+  background: #ffeb3b; /* yellow thumb */
+  border-radius: 3px;
+}
+.container::-webkit-scrollbar-track {
+  background: #000000; /* black track */
+}
+/* Responsive for smaller mobile */
+@media (max-width: 350px) {
+  body, .container {
+    padding: 10px;
+    max-width: 100%;
+    max-height: 600px;
+  }
+  .skill {
+    padding: 12px 15px;
+  }
+}
+</content>
+</create_file>
