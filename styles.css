@@ -1,0 +1,20 @@
+/* Existing styles ... */
+
+/* Profile image container */
+/* Set profile image via background URL here */
+.profile-image-container {
+  margin: 0.5rem auto 1rem auto;
+  width: 140px;
+  height: 140px;
+  border-radius: 50%;
+  border: 4px solid #00b050;
+  box-shadow: 0 0 10px #00b050aa;
+  background-image: url('https://via.placeholder.com/140');
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+/* Maintain existing styles below... */
+</content>
+</create_file>
