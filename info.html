@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Informasi Pribadi</title>
+  <link rel="stylesheet" href="info.css" />
+  <style>
+    /* Animation styles */
+    @keyframes slideIn {
+      from {
+        transform: translateX(-100%);
+        opacity: 0;
+      }
+      to {
+        transform: translateX(0);
+        opacity: 1;
+      }
+    }
+
+    section {
+      animation: slideIn 0.8s ease forwards;
+      opacity: 0; /* Start hidden */
+    }
+
+    section.visible {
+      opacity: 1; /* Fade in */
+    }
+  </style>
+</head>
+<body>
+
+  <h1>Informasi Pribadi</h1>
+
+  <section>
+    <h2>Data Diri</h2>
+    <p><strong>Nama:</strong> Fahmi Ilham Gymnastiar</p>
+    <p><strong>Tanggal Lahir:</strong> 8 Oktober 2006</p>
+    <p><strong>Tempat Lahir:</strong> Subang</p>
+    <p><strong>Alamat:</strong> Cikaum, Subang, Jawa Barat, Negara: Konoha</p>
+    <p><strong>Email:</strong> <a href="mailto:filhamgymnastiar@gmail.com">filhamgymnastiar@gmail.com</a></p>
+    <p><strong>Telepon:</strong> 081230130397</p>
+    <p><strong>Status:</strong> Belum Menikah</p>
+    <p><strong>Kewarganegaraan:</strong> Indonesia</p>
+  </section>
+
+  <section>
+    <h2>Pendidikan</h2>
+    <ul>
+      <li>
+        SMPN 1 CIKAUM
+        <div>
+          Mempelajari Semua Mata Pelajaran Yang Ada
+        </div>
+      </li>
+      <li>
+        SMKN 1 CIKAUM
+        <div>
+          Mengambil Jurusan TPTUP (TEKNIK PEMANASAN TATA UDARA DAN PENDINGINAN) <br> tapi malah jadi kang coding bjir
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Keahlian</h2>
+    <ul>
+      <li>Pengembangan Web (HTML, CSS, JavaScript)</li>
+      <li>Framework dan Library: React, Angular, Vue.js</li>
+      <li>Backend: Node.js</li>
+      <li>Database: GitHub, MongoDB</li>
+      <li>DevOps dan Deployment: Docker, Git, Jenkins, AWS</li>
+      <li>Desain UX/UI dan Prototyping: Figma, Adobe XD</li>
+      <li>Keamanan Aplikasi Web dan Pengujian</li>
+      <li>Pengembangan Mobile Responsif dan PWA</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Pengalaman Kerja</h2>
+    <ul>
+      <li>
+        -
+        <div>
+          Belum Kerja Bjir
+        </div>
+      </li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Hobbies & Minat</h2>
+    <ul>
+      <li>Membaca buku teknologi dan pengembangan diri</li>
+      <li>Berolahraga (lari, yoga)</li>
+      <li>Mengasah Otak Dan Mencoba Hal Baru</li>
+      <li>Belajar bahasa pemrograman dan framework baru</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Sertifikasi</h2>
+    <ul>
+      <li>Belum ada wir Yakali bukan developer yg punya sertifikat, jadi stop panggil gua developer</li>
+    </ul>
+  </section>
+
+  <script>
+    // Add the 'visible' class to each section after the page loads
+    window.onload = () => {
+      const sections = document.querySelectorAll('section');
+      sections.forEach((section, index) => {
+        setTimeout(() => {
+          section.classList.add('visible');
+        }, index * 300); // Stagger the animation for each section
+      });
+    };
+  </script>
+
+</body>
+</html>
