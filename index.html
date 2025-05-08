@@ -6,17 +6,24 @@
   <title>Portfolio - Your Name</title>
   <link rel="stylesheet" href="styles.css" />
   <style>
-    /* Slide-in animation for skill names */
-    #skills .skill-name {
-      opacity: 0;
-      transform: translateX(-50px);
-      animation: slideIn 0.8s forwards;
-    }
-    @keyframes slideIn {
+    /* Slide-in from left to right animation */
+    @keyframes slideFromLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
       to {
         opacity: 1;
         transform: translateX(0);
       }
+    }
+
+    /* Animation class */
+    .slide-in {
+      animation-name: slideFromLeft;
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+      opacity: 0;
     }
   </style>
 </head>
@@ -33,13 +40,13 @@
 </header>
 
 <section id="about" tabindex="0" aria-label="About Me">
-  <h2>About Me</h2>
-  <p>Hello! I am a passionate developer with experience in building web applications and sites.</p>
+  <h2 class="slide-target">About Me</h2>
+  <p class="slide-target">Hello! I am a passionate developer with experience in building web applications and sites.</p>
 </section>
 
 <section id="projects" tabindex="0" aria-label="Projects">
-  <h2>Projects</h2>
-  <article class="project-card" tabindex="0">
+  <h2 class="slide-target">Projects</h2>
+  <article class="project-card slide-target" tabindex="0">
     <h3 class="project-title">Example Project</h3>
     <p class="project-desc">This is a project description.</p>
     <a class="project-link" href="#">View Project</a>
@@ -47,30 +54,30 @@
 </section>
 
 <section id="skills" tabindex="0" aria-label="Skills & Proficiency">
-  <h2>Skills &amp; Proficiency</h2>
+  <h2 class="slide-target">Skills &amp; Proficiency</h2>
 
-  <div class="skill">
+  <div class="skill slide-target">
     <span class="skill-name" style="animation-delay: 0.2s;">HTML</span>
     <div class="skill-bar-bg">
       <div class="skill-bar-fill" data-percent="90">0%</div>
     </div>
   </div>
 
-  <div class="skill">
+  <div class="skill slide-target">
     <span class="skill-name" style="animation-delay: 0.4s;">CSS</span>
     <div class="skill-bar-bg">
       <div class="skill-bar-fill" data-percent="80">0%</div>
     </div>
   </div>
 
-  <div class="skill">
+  <div class="skill slide-target">
     <span class="skill-name" style="animation-delay: 0.6s;">JavaScript</span>
     <div class="skill-bar-bg">
       <div class="skill-bar-fill" data-percent="75">0%</div>
     </div>
   </div>
 
-  <div class="skill">
+  <div class="skill slide-target">
     <span class="skill-name" style="animation-delay: 0.8s;">React</span>
     <div class="skill-bar-bg">
       <div class="skill-bar-fill" data-percent="60">0%</div>
@@ -80,8 +87,8 @@
 </section>
 
 <section id="contact" tabindex="0" aria-label="Contact">
-  <h2>Contact</h2>
-  <p>You can reach me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+  <h2 class="slide-target">Contact</h2>
+  <p class="slide-target">You can reach me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
 </section>
 
 <footer>
@@ -90,17 +97,20 @@
 
 <script>
   window.addEventListener('load', () => {
-    const skillNames = document.querySelectorAll('#skills .skill-name');
-    skillNames.forEach((name, i) => {
-      name.style.animationDelay = `${0.2 + i * 0.2}s`;
+    // Animate slide-in for text elements
+    const slideTargets = document.querySelectorAll('.slide-target');
+    slideTargets.forEach((el, index) => {
+      el.style.animationDelay = (index * 0.15) + 's';
+      el.classList.add('slide-in');
     });
 
+    // Animate skill bars
     const skillBars = document.querySelectorAll('#skills .skill-bar-fill');
     skillBars.forEach((bar, index) => {
       const targetPercent = parseInt(bar.getAttribute('data-percent'), 10);
       let currentPercent = 0;
 
-      function animate() {
+      function animateBar() {
         if (currentPercent >= targetPercent) {
           bar.style.width = targetPercent + '%';
           bar.textContent = targetPercent + '%';
@@ -109,15 +119,149 @@
         currentPercent++;
         bar.style.width = currentPercent + '%';
         bar.textContent = currentPercent + '%';
-        requestAnimationFrame(animate);
+        requestAnimationFrame(animateBar);
       }
 
       setTimeout(() => {
-        animate();
-      }, 500 + index * 300);
+        animateBar();
+      }, 500 + index * 300); // start bars after some delay, staggered
     });
   });
 </script>
 
 </body>
 </html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+  <title>Portfolio - Your Name</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    /* Slide-in from left to right animation */
+    @keyframes slideFromLeft {
+      from {
+        opacity: 0;
+        transform: translateX(-50px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(0);
+      }
+    }
+
+    /* Animation class */
+    .slide-in {
+      animation-name: slideFromLeft;
+      animation-duration: 0.8s;
+      animation-fill-mode: forwards;
+      opacity: 0;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <h1>Your Name</h1>
+  <nav>
+    <a href="#about" tabindex="1">About</a>
+    <a href="#projects" tabindex="2">Projects</a>
+    <a href="#skills" tabindex="3">Skills</a>
+    <a href="#contact" tabindex="4">Contact</a>
+  </nav>
+</header>
+
+<section id="about" tabindex="0" aria-label="About Me">
+  <h2 class="slide-target">About Me</h2>
+  <p class="slide-target">Hello! I am a passionate developer with experience in building web applications and sites.</p>
+</section>
+
+<section id="projects" tabindex="0" aria-label="Projects">
+  <h2 class="slide-target">Projects</h2>
+  <article class="project-card slide-target" tabindex="0">
+    <h3 class="project-title">Example Project</h3>
+    <p class="project-desc">This is a project description.</p>
+    <a class="project-link" href="#">View Project</a>
+  </article>
+</section>
+
+<section id="skills" tabindex="0" aria-label="Skills & Proficiency">
+  <h2 class="slide-target">Skills &amp; Proficiency</h2>
+
+  <div class="skill slide-target">
+    <span class="skill-name" style="animation-delay: 0.2s;">HTML</span>
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill" data-percent="90">0%</div>
+    </div>
+  </div>
+
+  <div class="skill slide-target">
+    <span class="skill-name" style="animation-delay: 0.4s;">CSS</span>
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill" data-percent="80">0%</div>
+    </div>
+  </div>
+
+  <div class="skill slide-target">
+    <span class="skill-name" style="animation-delay: 0.6s;">JavaScript</span>
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill" data-percent="75">0%</div>
+    </div>
+  </div>
+
+  <div class="skill slide-target">
+    <span class="skill-name" style="animation-delay: 0.8s;">React</span>
+    <div class="skill-bar-bg">
+      <div class="skill-bar-fill" data-percent="60">0%</div>
+    </div>
+  </div>
+
+</section>
+
+<section id="contact" tabindex="0" aria-label="Contact">
+  <h2 class="slide-target">Contact</h2>
+  <p class="slide-target">You can reach me at: <a href="mailto:youremail@example.com">youremail@example.com</a></p>
+</section>
+
+<footer>
+  <p>© 2024 Your Name. All rights reserved.</p>
+</footer>
+
+<script>
+  window.addEventListener('load', () => {
+    // Animate slide-in for text elements
+    const slideTargets = document.querySelectorAll('.slide-target');
+    slideTargets.forEach((el, index) => {
+      el.style.animationDelay = (index * 0.15) + 's';
+      el.classList.add('slide-in');
+    });
+
+    // Animate skill bars
+    const skillBars = document.querySelectorAll('#skills .skill-bar-fill');
+    skillBars.forEach((bar, index) => {
+      const targetPercent = parseInt(bar.getAttribute('data-percent'), 10);
+      let currentPercent = 0;
+
+      function animateBar() {
+        if (currentPercent >= targetPercent) {
+          bar.style.width = targetPercent + '%';
+          bar.textContent = targetPercent + '%';
+          return;
+        }
+        currentPercent++;
+        bar.style.width = currentPercent + '%';
+        bar.textContent = currentPercent + '%';
+        requestAnimationFrame(animateBar);
+      }
+
+      setTimeout(() => {
+        animateBar();
+      }, 500 + index * 300); // start bars after some delay, staggered
+    });
+  });
+</script>
+
+</body>
+  </html>
+        
